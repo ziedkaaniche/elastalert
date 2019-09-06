@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+""# -*- coding: utf-8 -*-
 from .util import pretty_ts
 
 
