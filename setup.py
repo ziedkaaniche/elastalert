@@ -10,8 +10,8 @@ setup(
     name='elastalert',
     version='0.2.1',
     description='Runs custom filters on Elasticsearch and alerts on matches',
-    author='Quentin Long',
-    author_email='qlo@yelp.com',
+    author='Zied KAANICHE',
+    author_email='zied.kaaniche@digitus.tech',
     setup_requires='setuptools',
     license='Copyright 2014 Yelp',
     classifiers=[

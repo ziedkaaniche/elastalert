@@ -16,8 +16,6 @@ filter:
 
 alert:
 - "slack"
-
-
 slack:
 slack_webhook_url: "https://hooks.slack.com/services/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"
 slack_emoji_override: ":alert:"
