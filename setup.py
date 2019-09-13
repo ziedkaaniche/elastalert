@@ -48,5 +48,6 @@ setup(
         'thehive4py>=1.4.4',
         'python-magic>=0.4.15',
         'cffi>=1.11.5'
+        'python-dateutil>=2.5.0'
     ]
 )

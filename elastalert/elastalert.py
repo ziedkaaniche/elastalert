@@ -17,9 +17,9 @@ from smtplib import SMTP
 from smtplib import SMTPException
 from socket import error
 
-import dateutil.tz
+import dateutil
+
 import pytz
-from apscheduler.schedulers.background import BackgroundScheduler
 from croniter import croniter
 from elasticsearch.exceptions import ConnectionError
 from elasticsearch.exceptions import ElasticsearchException
