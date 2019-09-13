@@ -26,6 +26,7 @@ from elasticsearch.exceptions import ElasticsearchException
 from elasticsearch.exceptions import TransportError
 from elasticsearch.exceptions import NotFoundError
 
+from elastalert import kibana
 from .alerts import DebugAlerter
 from .config import load_conf
 from .enhancements import DropMatchException
