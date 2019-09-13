@@ -8,7 +8,7 @@ from setuptools import setup
 base_dir = os.path.dirname(__file__)
 setup(
     name='elastalert',
-    version='0.2.1',
+    version='1.0.0',
     description='Runs custom filters on Elasticsearch and alerts on matches',
     author='Zied KAANICHE',
     author_email='zied.kaaniche@digitus.tech',
