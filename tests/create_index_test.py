@@ -35,6 +35,13 @@ def test_read_es_6_index_mapping(es_mapping):
     print((json.dumps(mapping, indent=2)))
 
 
+@pytest.mark.parametrize('es_mapping', es_mappings)
+def test_read_es_7_index_mapping(es_mapping):
+    mapping = elastalert.create_index.read_es_index_mapping(es_mapping, 7)
+    assert es_mapping not in mapping
+    print((json.dumps(mapping, indent=2)))
+
+
 def test_read_default_index_mappings():
     mappings = elastalert.create_index.read_es_index_mappings()
     assert len(mappings) == len(es_mappings)
@@ -49,5 +56,11 @@ def test_read_es_5_index_mappings():
 
 def test_read_es_6_index_mappings():
     mappings = elastalert.create_index.read_es_index_mappings(6)
+    assert len(mappings) == len(es_mappings)
+    print((json.dumps(mappings, indent=2)))
+
+
+def test_read_es_7_index_mappings():
+    mappings = elastalert.create_index.read_es_index_mappings(7)
     assert len(mappings) == len(es_mappings)
     print((json.dumps(mappings, indent=2)))

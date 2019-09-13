@@ -38,7 +38,6 @@ Several rule types with common monitoring paradigms are included with ElastAlert
 Currently, we have built-in support for the following alert types:
 
 - Email
-- JIRA
 - OpsGenie
 - Commands
 - HipChat

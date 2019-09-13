@@ -130,11 +130,9 @@
 
 ### Added
 - Alerta alerter
-- Added support for transitioning JIRA issues
 - Option to recreate index in elastalert-create-index
 
 ### Fixed
-- Update jira_ custom fields before each alert if they were modified
 - Use json instead of simplejson
 - Allow for relative path for smtp_auth_file
 - Fixed some grammar issues
@@ -194,7 +192,6 @@
 - Pinned pytest
 - create-index reads index name from config.yaml
 - top_count_keys now works for context on a flatline rule type
-- Fixed JIRA behavior for issues with statuses that have spaces in the name
 
 ## v0.1.22
 
@@ -207,10 +204,8 @@
 ### Fixed
 - Fixed a bug causing create-index to fail if missing config.yaml
 - Fixed a bug when using ES5 with query_key and top_count_keys
-- Allow enhancements to set and clear arbitrary JIRA fields
 - Fixed a bug causing timestamps to be formatted in scientific notation
 - Stop attempting to initialize alerters in debug mode
-- Changed default alert ordering so that JIRA tickets end up in other alerts
 - Fixed a bug when using Stomp alerter with complex query_key
 - Fixed a bug preventing hipchat room ID from being an integer
 - Fixed a bug causing duplicate alerts when using spike with alert_on_new_data
@@ -231,12 +226,10 @@
 - Fixed the formatting of summary tables in Slack
 - Fixed ES_USE_SSL env variable
 - Fixed the unique value count printed by new_term rule type
-- Jira alerter no longer uses the non-existent json code formatter
 
 ## v0.1.19
 
 ### Added
-- Added support for populating JIRA fields via fields in the match
 - Added support for using a TLS certificate file for SMTP connections
 - Allow a custom suffix for non-analyzed Elasticsearch fields, like ".raw" or ".keyword"
 - Added match_time to Elastalert alert documents in Elasticsearch
@@ -245,13 +238,11 @@
 - Fixed an error in the documentation for rule importing
 - Prevent enhancements from re-running on retried alerts
 - Fixed a bug when using custom timestamp formats and new term rule
-- Lowered jira_bump_after_inactivity default to 0 days
 
 ## v0.1.18
 
 ### Added
 - Added a new alerter "post" based on "simple" which makes POSTS JSON to HTTP endpoints
-- Added an option jira_bump_after_inacitivty to prevent ElastAlert commenting on active JIRA tickets
 
 ### Removed
 - Removed "simple" alerter, replaced by "post"
@@ -265,7 +256,6 @@
 ## v0.1.16
 
 ### Fixed
-- Fixed a bug where JIRA titles might not use query_key values
 - Fixed a bug where flatline alerts don't respect query_key for realert
 - Fixed a typo "twilio_accout_sid"
 
@@ -346,7 +336,6 @@
 - Fixed a bug preventing ES <5.0 formatted queries working in elastalert-test-rule
 - Fixed top_count_keys adding .raw on ES >5.0, uses .keyword instead
 - Fixed a bug causing compound aggregation keys not to work
-- Better error reporting for the Jira alerter
 - AWS request signing now refreshes credentials, uses boto3
 - Support multiple ES versions on different rules
 - Added documentation for percentage match rule type

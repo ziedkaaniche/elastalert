@@ -55,7 +55,6 @@ class RulesLoader(object):
     # Used to map names of alerts to their classes
     alerts_mapping = {
         'email': alerts.EmailAlerter,
-        'jira': alerts.JiraAlerter,
         'opsgenie': OpsGenieAlerter,
         'stomp': alerts.StompAlerter,
         'debug': alerts.DebugAlerter,
@@ -80,9 +79,9 @@ class RulesLoader(object):
     }
 
     # A partial ordering of alert types. Relative order will be preserved in the resulting alerts list
-    # For example, jira goes before email so the ticket # will be added to the resulting email.
+    # For example, slack goes before email so the ticket # will be added to the resulting email.
     alerts_order = {
-        'jira': 0,
+        'slack': 0,
         'email': 1
     }
 
