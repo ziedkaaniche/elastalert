@@ -1,14 +1,14 @@
-name: Example frequency rule
+name: Apm notification to Slack
 type: frequency
 
 index: apm-*
 
 # Alert when this many documents matching the query occur within a timeframe
-num_events: 50
+num_events: 1
 
 # num_events must occur within this amount of time to trigger an alert
 timeframe:
-  hours: 4
+  seconds: 10
 
 filter:
 - term:
@@ -21,6 +21,7 @@ slack_webhook_url: "https://hooks.slack.com/services/T06TUL2E6/BMAU42ABV/Ob7PdVN
 slack_emoji_override: ":alert:"
 slack_msg_color: "danger"
 slack_username_override: "ELK-PreProd"
+slack_text_string: "test"
 
 slack_alert_fields:
 - title: Micro Service
