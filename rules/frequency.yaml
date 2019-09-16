@@ -23,7 +23,7 @@ slack_msg_color: "danger"
 slack_username_override: "ELK-PreProd"
 
 slack_alert_fields:
-- title: Micro Service
+- title: Service
   value: service.name
 
 - title: Log Message

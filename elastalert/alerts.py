@@ -777,7 +777,7 @@ class SlackAlerter(Alerter):
             'attachments': [
                 {
                     'color': self.slack_msg_color,
-                    'title': self.create_title(matches),
+                    # 'title': self.create_title(matches),
                     # 'text': body,
                     'mrkdwn_in': ['text', 'pretext'],
                     'fields': []
