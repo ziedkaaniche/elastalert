@@ -13,7 +13,7 @@ setup(
     author='Zied KAANICHE',
     author_email='zied.kaaniche@digitus.tech',
     setup_requires='setuptools',
-    license='Copyright 2014 Yelp',
+    license='Copyright 2019',
     classifiers=[
         'Programming Language :: Python :: 3.6',
         'License :: OSI Approved :: Apache Software License',

@@ -746,7 +746,7 @@ class SlackAlerter(Alerter):
     def get_aggregation_summary_text__maximum_width(self):
         width = super(SlackAlerter, self).get_aggregation_summary_text__maximum_width()
         # Reduced maximum width for prettier Slack display.
-        return min(width, 75)
+        return min(width, 175)
 
     def get_aggregation_summary_text(self, matches):
         text = super(SlackAlerter, self).get_aggregation_summary_text(matches)
