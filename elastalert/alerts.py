@@ -771,7 +771,7 @@ class SlackAlerter(Alerter):
         # set https proxy, if it was provided
         proxies = {'https': self.slack_proxy} if self.slack_proxy else None
 
-        print(body)
+        print(matches)
 
         payload = {
             'username': self.slack_username_override,
