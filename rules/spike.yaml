@@ -4,11 +4,11 @@ index: apm-*
 
 threshold_cur: 1
 timeframe:
-  seconds: 10
+  seconds: 5
 
 spike_height: 1
 
-spike_type: "up"
+spike_type: "both"
 
 filter:
   - term:
