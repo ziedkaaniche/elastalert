@@ -4,7 +4,7 @@ index: apm-*
 
 threshold_cur: 1
 timeframe:
-  seconds: 60
+  seconds: 10
 
 spike_height: 1
 
