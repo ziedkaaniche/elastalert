@@ -772,6 +772,7 @@ class SlackAlerter(Alerter):
         proxies = {'https': self.slack_proxy} if self.slack_proxy else None
 
         y = json.loads(body)
+        print(y)
         print(y["message"])
 
         payload = {
