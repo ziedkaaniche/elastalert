@@ -21,6 +21,7 @@ slack_webhook_url: "https://hooks.slack.com/services/T06TUL2E6/BMAU42ABV/Ob7PdVN
 slack_emoji_override: ":alert:"
 slack_msg_color: "danger"
 slack_username_override: "ELK-PreProd"
+slack_timeout: 5
 
 slack_alert_fields:
   - title: Service
