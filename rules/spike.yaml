@@ -30,4 +30,4 @@ slack_alert_fields:
     value: error.log.message
 
   - title: Exception Message
-    value: error.exception.message
+    value: error.exception
