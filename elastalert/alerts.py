@@ -773,12 +773,12 @@ class SlackAlerter(Alerter):
         payload = {
             'username': self.slack_username_override,
             'parse': self.slack_parse_override,
-            'text': self.slack_text_string,
+            'text': self.create_title(matches),
             'attachments': [
                 {
                     'color': self.slack_msg_color,
                     'title': self.create_title(matches),
-                    'text': body,
+                    # 'text': body,
                     'mrkdwn_in': ['text', 'pretext'],
                     'fields': []
                 }
