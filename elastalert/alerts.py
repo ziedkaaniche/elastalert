@@ -772,9 +772,8 @@ class SlackAlerter(Alerter):
         proxies = {'https': self.slack_proxy} if self.slack_proxy else None
 
         print(matches)
-        y = json.loads(matches)
+        y = json.loads(str(matches))
         print(y["message"])
-
 
         payload = {
             'username': self.slack_username_override,
