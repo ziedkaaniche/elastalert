@@ -788,7 +788,7 @@ class SlackAlerter(Alerter):
 
         postString = body.splitlines(True)[8:]
         # postString = body.split("\n",12)[12]
-        postString = "{" + postString + "}"
+        # postString = "{" + postString + "}"
 
         print(postString)
 
