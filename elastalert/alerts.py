@@ -785,7 +785,9 @@ class SlackAlerter(Alerter):
 
     def alert(self, matches):
         body = self.create_alert_body(matches)
-        print(body)
+        postString = body.split("\n",4)[4];
+
+        print(postString)
 
         body = self.format_body(body)
         # post to slack
