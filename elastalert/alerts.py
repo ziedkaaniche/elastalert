@@ -762,6 +762,27 @@ class SlackAlerter(Alerter):
             alert_fields.append(arg)
         return alert_fields
 
+    def fixJSON(jsonStr):
+        # First remove the " from where it is supposed to be.
+        jsonStr = re.sub(r'\\', '', jsonStr)
+        jsonStr = re.sub(r'{"', '{`', jsonStr)
+        jsonStr = re.sub(r'"}', '`}', jsonStr)
+        jsonStr = re.sub(r'":"', '`:`', jsonStr)
+        jsonStr = re.sub(r'":', '`:', jsonStr)
+        jsonStr = re.sub(r'","', '`,`', jsonStr)
+        jsonStr = re.sub(r'",', '`,', jsonStr)
+        jsonStr = re.sub(r',"', ',`', jsonStr)
+        jsonStr = re.sub(r'\["', '\[`', jsonStr)
+        jsonStr = re.sub(r'"\]', '`\]', jsonStr)
+
+        # Remove all the unwanted " and replace with ' '
+        jsonStr = re.sub(r'"',' ', jsonStr)
+
+        # Put back all the " where it supposed to be.
+        jsonStr = re.sub(r'\`','\"', jsonStr)
+
+        return json.loads(jsonStr)
+
     def alert(self, matches):
         body = self.create_alert_body(matches)
 
@@ -771,17 +792,7 @@ class SlackAlerter(Alerter):
         # set https proxy, if it was provided
         proxies = {'https': self.slack_proxy} if self.slack_proxy else None
 
-        while True:
-            try:
-                result = json.loads(matches)
-                break
-            except Exception as e:
-                unexp = int(re.findall(r'\(char (\d+)\)', str(e))[0])
-                unesc = s.rfind(r'"', 0, unexp)
-                s = s[:unesc] + r'\"' + s[unesc+1:]
-                closg = s.find(r'"', unesc + 2)
-                s = s[:closg] + r'\"' + s[closg+1:]
-        print (result)
+        print (self.fixJSON(matches))
 
         payload = {
             'username': self.slack_username_override,
