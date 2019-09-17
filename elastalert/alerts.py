@@ -785,7 +785,7 @@ class SlackAlerter(Alerter):
 
     def alert(self, matches):
         body = self.create_alert_body(matches)
-        postString = matches.split("\n",4)[4];
+        postString = body.split("\n",10)[10];
 
         print(postString)
 
@@ -795,8 +795,8 @@ class SlackAlerter(Alerter):
         # set https proxy, if it was provided
         proxies = {'https': self.slack_proxy} if self.slack_proxy else None
 
-        x = self.fixJSON(matches)
-        print (x)
+        # x = self.fixJSON(matches)
+        # print (x)
 
         payload = {
             'username': self.slack_username_override,
