@@ -785,9 +785,9 @@ class SlackAlerter(Alerter):
 
     def alert(self, matches):
         body = self.create_alert_body(matches)
-        print(body)
 
-        postString = body.split("\n",12)[12]
+        postString = body.splitlines(True)[8:]
+        # postString = body.split("\n",12)[12]
         postString = "{" + postString + "}"
 
         print(postString)
